@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="en-US">
+	<head>
+		<meta charset="utf-8" />
+		<meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+		<title>Login</title>
+		<meta name="description" content="" />
+		<meta name="Author" content="Dorin Grigoras [www.stepofweb.com]" />
+
+		<!-- mobile settings -->
+		<meta name="viewport" content="width=device-width, maximum-scale=1, initial-scale=1, user-scalable=0" />
+
+		<!-- WEB FONTS -->
+		<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700,800&amp;subset=latin,latin-ext,cyrillic,cyrillic-ext" rel="stylesheet" type="text/css" />
+
+		<!-- CORE CSS -->
+		<link href="assets/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+		
+		<!-- THEME CSS -->
+		<link href="assets/css/essentials.css" rel="stylesheet" type="text/css" />
+		<link href="assets/css/layout.css" rel="stylesheet" type="text/css" />
+		<link href="assets/css/color_scheme/green.css" rel="stylesheet" type="text/css" id="color_scheme" />
+        
+		<script type="text/javascript">
+            function checkVal(){
+                
+               var email="dginstallation@gmail.com";
+                var pwd="54321";
+                var x= document.getElementById("email");
+                var y=document.getElementById("pwd");
+                if(x.value == ''|| y.value == ''){
+                    alert("Kindly enter Email & Password to Proceed");
+                    return false;
+                    
+                }
+                else if (x.value =='dginstallation@gmail.com' && y.value == '54321'){
+                  
+                    window.location.href="site.html"
+                }
+                
+                }
+            
+        </script>
+		
+
+	</head>
+	<!--
+		.boxed = boxed version
+	-->
+	<body>
+
+
+		<div class="padding-15">
+<div style="text-align: center" ><img src="assets/images/logos.jpg"/>
+			<div class="login-box" style=" box-shadow: 0px 0px 20px 1px rgba(0, 0, 0, .6);">
+
+				<!-- login form -->
+				<div  class="sky-form boxed" >
+					<header><i class="fa fa-users"></i> Log In</header>
+
+					<!--
+					<div class="alert alert-danger noborder text-center weight-400 nomargin noradius">
+						Invalid Email or Password!
+					</div>
+
+					<div class="alert alert-warning noborder text-center weight-400 nomargin noradius">
+						Account Inactive!
+					</div>
+
+					<div class="alert alert-default noborder text-center weight-400 nomargin noradius">
+						<strong>Too many failures!</strong> <br />
+						Please wait: <span class="inlineCountdown" data-seconds="180"></span>
+					</div>
+					-->
+
+					<fieldset>	
+					
+						<section>
+							<label class="label">E-mail</label>
+							<label class="input">
+								<i class="icon-append fa fa-envelope"></i>
+								<input type="email" id="email">
+								
+							</label>
+						</section>
+						
+						<section>
+							<label class="label">Password</label>
+							<label class="input">
+								<i class="icon-append fa fa-lock"></i>
+								<input type="password" id="pwd">
+								
+							</label>
+							
+						</section>
+
+					</fieldset>
+
+					<footer>
+					<div class="row">
+					    <div class="col-md-12"><button type="submit" class="btn btn-primary pull-right" style="width: 100% !important;" onclick="checkVal()">Log In</button></div>
+					    
+					    
+					</div>
+						
+						
+					</footer>
+                </div>
+				<!-- /login form -->
+
+			</div>
+
+		</div>
+</div>
+		<!-- JAVASCRIPT FILES -->
+        
+		<script type="text/javascript">var plugin_path = 'assets/plugins/';</script>
+		<script type="text/javascript" src="assets/plugins/jquery-2.2.3.min.js"></script>
+		<script type="text/javascript" src="assets/js/app.js"></script>
+	</body>
+</html>

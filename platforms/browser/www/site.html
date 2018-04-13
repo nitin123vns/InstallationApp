@@ -1,0 +1,166 @@
+<!doctype html>
+<html lang="en-US">
+	<head>
+		<meta charset="utf-8" />
+		<meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+		<title>Main Page</title>
+		<meta name="description" content="" />
+		<meta name="Author" content="Dorin Grigoras [www.stepofweb.com]" />
+
+		<!-- mobile settings -->
+		<meta name="viewport" content="width=device-width, maximum-scale=1, initial-scale=1, user-scalable=0" />
+
+		<!-- WEB FONTS -->
+		<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700,800&amp;subset=latin,latin-ext,cyrillic,cyrillic-ext" rel="stylesheet" type="text/css" />
+
+		<!-- CORE CSS -->
+		<link href="assets/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+		
+		<!-- THEME CSS -->
+		<link href="assets/css/essentials.css" rel="stylesheet" type="text/css" />
+		<link href="assets/css/layout.css" rel="stylesheet" type="text/css" />
+		<link href="assets/css/color_scheme/green.css" rel="stylesheet" type="text/css" id="color_scheme" />
+		<script type="text/javascript">
+            function callJq(){
+                alert("call me");
+                previewFile(); 
+            }
+           
+   function previewFile(){
+       var preview = document.querySelector('img'); //selects the query named img
+       var file    = document.querySelector('input[type=file]').files[0]; //sames as here
+       var reader  = new FileReader();
+
+       reader.onloadend = function () {
+           preview.src = reader.result;
+       }
+
+       if (file) {
+           reader.readAsDataURL(file); //reads the data as a URL
+           window.location.href="success.html"
+       } else {
+           preview.src = "";
+            
+       }
+  }
+
+  
+            
+            
+            
+ $(document).ready(function () {  
+//function will be called on button click having id btnsave
+        $("#submit").click(function () {  
+            $.ajax(  
+            {  
+                type: "POST", //HTTP POST Method  
+                url: "Home/AddEmployee", // Controller/View   
+                data: { //Passing data  
+                    Site: $("#sitedetail").val(), //Reading text box values using Jquery  
+                    option: $("#ck1y").val(),
+                    
+                }  
+  
+            });  
+  
+        });  
+    });  
+        </script>
+		
+
+	</head>
+	<!--
+		.boxed = boxed version
+	-->
+	<body>
+<div class="padding-15">
+<div style="text-align: center" ><img src="assets/images/logos.jpg"/>
+			
+
+		<div class="padding-15" style="">
+
+			<div class="login-box" style=" box-shadow: 0px 0px 20px 1px rgba(0, 0, 0, .6); width: 600px !important; ">
+
+				<!-- login form -->
+				<div id ="pdata">
+					<header><strong>Site/Location :</strong> &nbsp; <input type="text" placeholder="Enter Site" id="sitedetail"></header>
+
+					
+<div class="row">
+                <div class="col-md-12" style="height: 290px; width: 360px; overflow: auto; margin-left: 10px" >
+					<fieldset >	
+					<br />
+						<table class="table table-bordered table-striped table-vertical-middle" >
+									<thead>
+										<tr>
+											<th class="width-30">S.N.</th>
+											<th>Tools</th>
+											<th>Yes</th>
+											
+										</tr>
+									</thead>
+									<tbody>
+										
+										<tr>
+											<td class="text-center">1.</td>
+											<td>CHECK FUEL AVAIBALITY FOR CALIBRATION </td>
+											<td><input type="checkbox" name="verify" id ="ck1" ></td>
+											
+											
+										</tr>
+										<tr>
+											<td class="text-center">2.</td>
+											<td>CHECK STATUS OF DG </td>
+											<td><input type="checkbox" name="verify" id ="ck2" ></td>
+											
+											
+										</tr>
+										<tr>
+											<td class="text-center">3.</td>
+											<td>COMPLETE THE INSTALLATION</td>
+											<td><input type="checkbox" name="verify" id ="ck3"></td>
+											
+											
+										</tr>
+                                        <tr>
+											<td class="text-center">4.</td>
+											<td>START DG AND CHECK THE DATA</td>
+											<td><input type="checkbox" name="verify" id="ck4"></td>
+											
+											
+										</tr>
+										
+										
+									</tbody>
+								</table>
+
+					</fieldset>
+    </div>
+                    </div>
+
+					<footer>
+					<div class="row">
+					    
+					   
+                                            
+                    <div class="col-md-12"><input type="file" class="form-control" id="fileToUpload" name="fileToUpload"  ></div> 
+<tr>
+                        </tr>
+					    <div class="col-md-12"><button type="submit" id="btnsubmit" onclick="callJq()" class="btn btn-primary pull-right" style="width: 100% !important;">Submit</button></div>
+					</div>
+						
+					
+					</footer>
+				</div>
+				<!-- /login form -->
+
+			</div>
+
+		</div>
+
+		<!-- JAVASCRIPT FILES -->
+		<script type="text/javascript">var plugin_path = 'assets/plugins/';</script>
+		<script type="text/javascript" src="assets/plugins/jquery/jquery-2.2.3.min.js"></script>
+		<script type="text/javascript" src="assets/js/app.js"></script>
+	</body>
+</html>
